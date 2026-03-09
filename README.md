@@ -13,20 +13,23 @@
 - 🔹 **Гибкая настройка** — конфигурация через `.env`
 - 🔹 **Кроссплатформенность** — Windows, Linux, macOS
 
+- 🔹 **Кроссплатформенность** — Windows, Linux, macOS
+
 ## 🛠 Технологии
 
-| Компонент | Технология | Локально / Облако |
-|-----------|-----------|-------------------|
-| 🎙️ Распознавание речи | Vosk | ✅ Локально |
-| 🧠 Языковая модель | OpenRouter API | ☁️ Облако |
-| 🗣️ Синтез речи | edge-tts | ☁️ Облако |
-| ⚙️ Конфигурация | pydantic-settings | ✅ Локально |
+| Компонент | Технология | Локально / Облако | Ссылка |
+|-----------|-----------|-------------------|--------|
+| 🎙️ Распознавание речи | Vosk | ✅ Локально | [GitHub](https://github.com/alphacep/vosk) |
+| 🧠 Языковая модель | OpenRouter API | ☁️ Облако | [OpenRouter.ai](https://openrouter.ai) |
+| 🗣️ Синтез речи | edge-tts | ☁️ Облако | [GitHub](https://github.com/rany2/edge-tts) |
+| ⚙️ Конфигурация | pydantic-settings | ✅ Локально | [PyPI](https://pypi.org/project/pydantic-settings/) |
+| 🔊 Аудио | PyAudio + pygame | ✅ Локально | [PyAudio](https://pypi.org/project/PyAudio/) |
 
 ## 🚀 Быстрый старт
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/yourname/ai-voice-assistant.git
+git clone https://github.com/spider21lab/ai-voice-assistant.git
 cd ai-voice-assistant
 
 # Установить зависимости
@@ -35,8 +38,11 @@ pip install -e ".[dev]"
 # Настроить окружение
 cp .env.example .env
 
-# Скачать модель
+# Автоматическая загрузка модели Vosk
 python scripts/download_models.py
+
+# Или вручную: скачайте с https://alphacephei.com/vosk/models
+# Распакуйте в папку models/model-small-ru
 
 # Запустить
 python -m voice_assistant
